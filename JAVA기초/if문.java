@@ -13,7 +13,16 @@ import java.util.Scanner;
  * 	조건식이 false 일 경우 실핼될 명령문;
  * }
  * 
- * 1-3. if문 문제
+ * 1-3. 다중 if ~ else 문
+ * if(조건식){
+ * 	조건식이 true 일 경우 실행될 명령문;
+ * }else if(조건식2){
+ * 	조건식2가 true 일 경우 실행될 명령문;
+ * }else{
+ * 	조건식이 false 일 경우 실핼될 명령문;
+ * }
+ * 
+ * if문 문제
  * -프로그램이 시작되면 연도를 입력받는다.
  * 연도:
  * -시스템은 입력 받은 연도가 윤년인지 아닌지 판단하여 결과를 출력한다.
@@ -45,14 +54,22 @@ public class ifTest {
 			System.out.println("x는 10보다 작다.");
 		}
 		
+		// 다중 if ~ else 문
+		if(x > 10){
+			System.out.println("x는 10보다 크다");
+		}else if(x > 8){
+			System.out.println("x는 10보다 작다.");
+		}else{
+			System.out.println("x는 ???");
+		}
+		
 		
 		// if문 연습문제
-		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("연도 : ");
 		int year = sc.nextInt();
-		
+
 		boolean isLeapYear = false;
 		
 		if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){

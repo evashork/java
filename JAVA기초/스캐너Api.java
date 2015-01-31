@@ -7,7 +7,7 @@ public class ScannerTest {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("¿Ã∏ß : "); //println ¡ŸπŸ≤ﬁ,
+		System.out.print("¿Ã∏ß : "); // println ¡ŸπŸ≤ﬁ,
 		String name = sc.next();		
 		System.out.println("name = " + name);
 		

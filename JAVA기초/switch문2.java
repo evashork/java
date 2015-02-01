@@ -23,15 +23,16 @@ public class DayOfMonthTest {
 		System.out.print("달 : ");
 		int month = sc.nextInt();
 		
-		int day;
+		int day = 31;
 
 		boolean isLeapYear = false;
-		boolean isMonth = false;
+		boolean isMonth = true;
 		
 		if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
 			isLeapYear = true;
 		}
 		
+		//break문을 선언하지 않으면 다음 case로 이동한다.
 		switch (month) {
 		case 1:
 		case 3:
@@ -40,24 +41,29 @@ public class DayOfMonthTest {
 		case 8:
 		case 10:
 		case 12:
-			day = 31;
 			break;
-		case 2:
 		case 4:
 		case 6:
 		case 9:
 		case 11:
 			day = 30;
 			break;
+		case 2:
+			if(isLeapYear){
+				day = 29;
+			}else{
+				day = 30;
+			} 
+			break;
 		default:
 			isMonth = false;
 			break;
 		}
 		
-		if(isLeapYear){
-			System.out.println(year + "년 " + month + "월은 총" + day + "일까지 존재합니다.");
+		if(isMonth){
+			System.out.println(year + "년 " + month + "월은 총 " + day + "일까지 존재합니다.");
 		}else{
-			System.out.println("달값이 잘못 입력되었습니다");
+			System.out.println("달값이 잘못 입력되었습니다.");
 		}
 	}
 

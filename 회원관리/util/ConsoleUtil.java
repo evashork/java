@@ -80,4 +80,14 @@ public class ConsoleUtil {
 		int age = sc.nextInt();
 		return new MemberVO(oldMember.getId(), name, email, nation, gender, age);
 	}
+
+	public void printRemoveSuccessMessage(String id) {
+		// TODO Auto-generated method stub
+		System.out.println(id + "님의 정보가 삭제 되었습니다.");
+	}
+	
+	public void printRemoveFalseMessage(String id) {
+		// TODO Auto-generated method stub
+		System.out.println(id + "님의 정보삭제를 실패하였습니다.");
+	}
 }

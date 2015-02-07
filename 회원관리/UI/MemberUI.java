@@ -16,13 +16,14 @@ public class MemberUI {
 		boolean isStop = false;
 		int menu = -1; // 로컬변수는 반드시 초기화가 필요
 		String id = null; // 회원정보수정 및 삭제에 쓰임
+		//메소드 생성 방법 ctrl + 1 
 		
 		do{
 			System.out.println("===회원관리===");
-			System.out.println("1.회원등록");
-			System.out.println("2.회원목록조회");
-			System.out.println("3.회원정보수정");
-			System.out.println("4.회원정보삭제");
+			System.out.println("1.회원등록"); //C(Create)
+			System.out.println("2.회원목록조회"); //R(Read)
+			System.out.println("3.회원정보수정"); //U(Update)
+			System.out.println("4.회원정보삭제"); //D(Delete)
 			System.out.println("5.프로그램종료");
 			
 			System.out.print("메뉴입력 : ");
@@ -53,8 +54,19 @@ public class MemberUI {
 				if(oldMember == null){
 					consoleUtil.printIdNotFoundMessage(id);
 				}else{
-					MemberVO updateMember = consoleUtil.getUpdateMember(sc,id);
+					MemberVO updateMember = consoleUtil.getUpdateMember(sc,oldMember);
 					memberService.modifyMember(updateMember);
+				}
+				break;
+				
+			case 4:
+				id = consoleUtil.getId(sc, "삭제할 "); // 삭제할 id를 입력받는다.
+				boolean isRemoveSuccess = memberService.removeMember(id); // 삭제 성공 여부를 확인
+				
+				if(isRemoveSuccess){
+					consoleUtil.printRemoveSuccessMessage(id); // 성공 메세지 
+				}else{
+					consoleUtil.printRemoveFalseMessage(id);  // 실패 메세지
 				}
 				break;
 

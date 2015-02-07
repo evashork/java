@@ -3,6 +3,8 @@
  */
 package svc;
 
+import java.lang.management.MemoryUsage;
+
 import VO.MemberVO;
 
 public class MemberService {
@@ -61,5 +63,45 @@ public class MemberService {
 	// 회원정보 수정
 	public void modifyMember(MemberVO updateMember) {
 		// TODO Auto-generated method stub
+		for (int i = 0; i < memberArray.length; i++) {
+			if(memberArray[i].getId().equals(updateMember.getId())){ 
+				//동일한 아이디를 찾고 배열에 updateMember를 대입
+				memberArray[i] = updateMember;
+				break;
+			}
+		}
+	}
+	
+	// 회원정보 삭제 
+	public boolean removeMember(String id) {
+		// TODO Auto-generated method stub
+		boolean isRemoveSuccess = false;
+		
+		// id의 배열 인덱스를 찾아야함
+		int index = -1;  // 임의로 줌
+		for (int i = 0; i < memberArray.length; i++) {
+			if(memberArray[i].getId().equals(id)){
+				index = i; // i번째 인덱스 
+				isRemoveSuccess = true;
+				break;
+			}
+		}
+		
+		// id를 찾음
+		if(isRemoveSuccess){
+			MemberVO[] tempArray = memberArray;
+			memberArray = new MemberVO[memberArray.length - 1];
+			// 임의의 배열을 만들어서 해당 i를 건너뛰고 뒤에오는 값은 앞으로 땡긴다.
+			
+			for(int i = 0; i < tempArray.length; i++){
+				if(i < index){
+					memberArray[i] = tempArray[i];
+				}else if(i > index){
+					memberArray[i - 1] = tempArray[i];
+				}
+			}
+		}
+		
+		return isRemoveSuccess;
 	}
 }

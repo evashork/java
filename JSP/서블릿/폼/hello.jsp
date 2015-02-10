@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-�ȳ�
+핼로우
 </body>
 </html>

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>»ö»ó ¼±ÅÃ</h1>
+	<h1>ìƒ‰ìƒì„ íƒê¸°</h1>
 	<form  action="colorChoice" method="post">
 		<select name="color">
 			<option>red</option>
@@ -17,7 +17,7 @@
 			<option>dark</option>
 		</select>
 		<br>
-		<input type="submit" value="»ö»ó¼±ÅÃ">
+		<input type="submit" value="ìƒ‰ìƒì„ íƒ">
 	</form>
 </body>
 </html>

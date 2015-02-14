@@ -25,12 +25,21 @@
 </head>
 <body>
 <%
-	Member loginMember = (Member)request.getAttribute("loginMember");
+	Member loginMember = (Member)session.getAttribute("loginMember");
+	if(loginMember == null){
+%>
+	<a href = "loginForm.jsp">로그인</a>
+<%
+	} else{
 %>
 	<h1>로그인 한 사용자 정보</h1>
 	아이디 : <%= loginMember.getId() %><br>
 	비밀번호 : <%= loginMember.getPassword() %><br>
 	이름 : <%= loginMember.getName() %><br>
 	주소 : <%= loginMember.getAddr() %><br>
+	<a href = "logout">로그아웃</a>
+<%
+	}
+%>
 </body>
 </html>

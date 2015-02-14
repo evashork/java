@@ -17,6 +17,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import SVC.LoginService;
 import VO.Member;
@@ -87,7 +88,7 @@ public class LoginServlet extends HttpServlet {
 			// 요청 변경이 없다. logingSuccess.jsp
 			request.setAttribute("loginMember", loginMember); // 2-1
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("logingSuccess.jsp"); 
+			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp"); 
 			dispatcher.forward(request, response);
 			
 		}else{
@@ -153,11 +154,11 @@ public class LoginServlet extends HttpServlet {
 			 *  application - 브라우저를 껐다 켜도 사용가능, 서버에서 온 오프 할때 까지
 			 */
 			
+			// 세션 처리
+			HttpSession session = request.getSession(); // 각 클라이언트마다의 세션 영역을 얻어옴
 			// JSP 포워딩 - 링크 이동 
-			request.setAttribute("loginMember", loginMember); // 2-1
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("logingSuccess.jsp"); 
-			dispatcher.forward(request, response);
+			session.setAttribute("loginMember", loginMember); // 2-1
+			response.sendRedirect("index.jsp");
 			
 		}else{
 			//인증 실패

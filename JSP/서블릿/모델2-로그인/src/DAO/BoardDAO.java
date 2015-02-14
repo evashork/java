@@ -44,7 +44,7 @@ public class BoardDAO {
 				loginMember.setAddr(rs.getString("addr"));
 				loginMember.setId(rs.getString("id"));
 				loginMember.setName(rs.getString("name"));
-				loginMember.setPassword(rs.getString("passwd"));
+				loginMember.setPassword(rs.getString("Password"));
 				
 			}
 			

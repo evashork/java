@@ -28,7 +28,9 @@
 		<form action="login" method="post">
 			<fieldset class="formfield">
 				<label for="id">아이디</label><input type="text" name="id" id="id"><br> 
-				<label for="passwd">패스워드</label><input type="password" name="passwd" id="passwd"><br> 			
+				<label for="passwd">패스워드</label><input type="password" name="passwd" id="passwd"><br> 	
+						
+				<label for="useCookie">쿠키사용</label><input type="checkbox" name="useCookie" id="useCookie"><br> 							
 				<input type="submit" value="로그인">
 			</fieldset>
 		</form>

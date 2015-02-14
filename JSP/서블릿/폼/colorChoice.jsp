@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>╩Ж╩С ╪╠ец</h1>
+	<h1>Л┐┴Л┐│ Л└═М┐²</h1>
 	<form  action="colorChoice" method="post">
 		<select name="color">
 			<option>red</option>
@@ -17,7 +17,13 @@
 			<option>dark</option>
 		</select>
 		<br>
-		<input type="submit" value="╩Ж╩С╪╠ец">
+		<label for="name">Л²╢К╕└</label><input type="text" name="name" id="name"><br>
+		<label for="area">К╘■К╙╗</label><textarea id="area" name="area" rows="5" cols="10"></textarea><br>
+		<label for="man">К┌╗Л·░</label><input type="radio" name="gender" value="man" id="man"><br>
+		<label for="woman">Л≈╛Л·░</label><input type="radio" name="gender" value="woman" id="woman"><br>
+		<label for="passwrd">К╧└К╟─К╡┬М≤╦</label><input type="password" id="passwrd" name="passwrd"><br>
+		<input type="submit" value="Л┐┴Л┐│Л└═М┐²">
+		<input type="reset" value="К╕╛Л┘▀">
 	</form>
 </body>
 </html>
